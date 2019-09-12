@@ -1,25 +1,24 @@
 module.exports = {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    'plugin:@typescript-eslint/recommended'
   ],
   "plugins": [
-  ],
+    "@typescript-eslint",
+     "react"
+    ],
   "rules": {
-    "react/jsx-closing-tag-location": "off",
-    "react/prop-types": "off",
-    "jsx-a11y/label-has-for": "off",
-    "linebreak-style": "off",
-    "no-underscore-dangle": "off",
-    "no-plusplus": "off",
-    "import/prefer-default-export": "off",
-    "no-param-reassign": "off",
-    "no-confusing-arrow": "off",
-    "jsx-a11y/media-has-caption": "off",
-    "object-curly-newline": "off",
-    "react/sort-comp": "off",
-    "import/no-unresolved": "off",
-    "react/no-unescaped-entities": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
   }
-};
+};  
