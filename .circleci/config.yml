@@ -19,13 +19,12 @@ jobs:
           name: test
           command: npm test
 workflows:
+  version: 2
   testing:
-    triggers:
-      - schedule:
+    jobs:
+      - test:
           filters:
             branches:
               only:
                 - master
                 - development
-    jobs:
-      - test
