@@ -1,45 +1,45 @@
 /* eslint-disable no-undef */
-const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: path.resolve("src/"),
+  context: path.resolve('src/'),
   entry: {
-    client: "./index"
+    client: './index'
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"]
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   module: {
     rules: [
       {
         test: /\.(j|t)sx?$/,
         use: {
-          loader: "babel-loader"
+          loader: 'awesome-typescript-loader'
         }
       },
       {
         test: /\.scss$/,
-        loader: "style-loader!css-loader!sass-loader"
+        loader: 'style-loader!css-loader!sass-loader'
       },
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        loader: "url-loader",
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /.svg$/],
+        loader: 'url-loader',
         query: {
           limit: 10000,
-          name: "static/media/[name].[hash:8].[ext]"
+          name: 'static/media/[name].[hash:8].[ext]'
         }
       }
     ]
   },
   output: {
-    path: path.join(__dirname, "build"),
-    filename: "./[name].[hash:8].js"
+    path: path.join(__dirname, 'build'),
+    filename: './[name].[hash:8].js'
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./index.html",
-      filename: "./index.html"
+      template: './index.html',
+      filename: './index.html'
     })
   ],
   devServer: {
