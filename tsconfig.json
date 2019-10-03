@@ -9,7 +9,12 @@
     "strict": true,
     "skipLibCheck": true,
     "isolatedModules": true,
-    "esModuleInterop": true
-  },
-  "include": ["src"]
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@images/*": ["./images/*"],
+      "@libs/*": ["./libs/*"]
+    },
+    "typeRoots": ["../node_modules/@types", "./types"]
+  }
 }

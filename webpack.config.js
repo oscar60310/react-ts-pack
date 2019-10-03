@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   context: path.resolve('src/'),
@@ -8,7 +9,8 @@ module.exports = {
     client: './index'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    plugins: [new TsconfigPathsPlugin()]
   },
   module: {
     rules: [
